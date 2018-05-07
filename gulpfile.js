@@ -77,3 +77,19 @@ var paths = {
 	gulp.task('default',['clean'],function(){
 		gulp.start('styles', 'scripts', 'images');
 	});
+
+	gulp.task('watch', function() {
+		// Watch .scss files
+		gulp.watch('src/styles/**/*.scss', ['styles']);
+		// Watch .js files
+		gulp.watch('src/scripts/**/*.js', ['scripts']);
+		// Watch image files
+		gulp.watch('src/images/**/*', ['images']);
+	});
+
+	//gulp.task('watch', function() {
+		// Create LiveReload server
+	//	livereload.listen();
+		// Watch any files in dist/, reload on change
+	//	gulp.watch(['dist/**']).on('change', livereload.changed);
+	//});
